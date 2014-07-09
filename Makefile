@@ -35,7 +35,7 @@ ifeq ($(UNAME),Darwin)
 endif
 
 $(BINDIR) $(LIBDIR) $(TMPDIR):
-	mkdir -p '$@'
+	mkdir "$@"
 
 $(TMPDIR)/codegen: $(wildcard src/codegen/*.rs) $(TMPDIR)
 	$(RUSTC) -o '$(TMPDIR)/codegen' src/codegen/main.rs $(RUSTFLAGS)
